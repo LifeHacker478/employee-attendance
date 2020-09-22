@@ -31,6 +31,13 @@ Res
 }
 ```
 
+```
+GET /api/v1/testing/employee/enter?e_id=<id>&date=<date>
+```
+```
+GET /api/v1/testing/employee/exit?e_id=<id>&date=<date>
+```
+
 To connect to mysql use:
 
 ```
