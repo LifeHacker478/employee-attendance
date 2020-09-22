@@ -15,7 +15,7 @@ var router = express.Router();
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "notarealpassword",
   database: "attendance"
 });
 
@@ -43,7 +43,6 @@ router.post('/entry', function(req, res){
 
 router.post('/exit', function(req, res){
 	const authHeader = req.headers.authorization;
-	console.log(authHeader);
 	if (!authHeader || authHeader !== 'Basic R0dZU1dJOjIwMTVTVyFHR1k=') {
 	    return res.status(403).json({
 	      message: 'FORBIDDEN'
@@ -54,8 +53,6 @@ router.post('/exit', function(req, res){
 	var time = moment().format('hh:mm:ss');
 
 	var q = `INSERT INTO exits (employee_id, exit_date, exit_time) VALUES ("${employee_id}", "${date}", "${time}")`;
-
-	console.log(q);
 
 	con.query(q, (err, reso) => {
 		if (err) {

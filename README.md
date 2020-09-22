@@ -30,3 +30,14 @@ Res
 	"status": "successfully marked exit"
 }
 ```
+
+To connect to mysql use:
+
+```
+mysql -u root -h localhost -p
+```
+When prompted for password type password as "password" (without quotes)
+
+Select database using
+```select attendance```
+
